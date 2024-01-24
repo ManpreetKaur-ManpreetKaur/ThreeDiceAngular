@@ -1,5 +1,16 @@
 <app-header></app-header>
 <main>
-
+  <h2>Roll the Dice</h2>
+  <p>
+    <img *ngFor="let value of rollData.values"
+         src="/assets/images/dice/side_{{value}}.png" alt="side_{{value}}">
+  </p>
+  <p>
+    <span class="total_label">Total: </span>
+    <span class="total_number">{{rollData.total}}</span>
+  </p>
+  <p>
+    <button (click)="onRollDice()">Roll Dice</button>
+  </p>
 </main>
 <app-footer name="Applied Computing"></app-footer>
