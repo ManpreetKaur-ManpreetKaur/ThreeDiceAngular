@@ -15,8 +15,9 @@ export class AppComponent {
     this.rollData = rollerService.getRollData(3);
   }
 
-  onRollDice(){
-    this.rollData = this.rollerService.getRollData(3);
+  onRollDice(numberOfDice: number){
+    this.rollData = this.rollerService.getRollData(numberOfDice);
   }
 
+  protected readonly parseInt = parseInt;
 }
