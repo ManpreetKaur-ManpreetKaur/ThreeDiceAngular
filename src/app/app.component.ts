@@ -10,8 +10,10 @@ import {RollData} from "./roll-data";
 export class AppComponent {
 
   rollData: RollData;
+  private rollerService: RollerService;
 
-  constructor(private rollerService: RollerService){
+  constructor(rollerService: RollerService){
+    this.rollerService = rollerService;
     this.rollData = rollerService.getRollData(3);
   }
 
