@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {RollerService} from "./roller.service";
 import {RollData} from "./roll-data";
 
 @Component({
@@ -11,12 +10,31 @@ export class AppComponent {
 
   rollData: RollData;
 
-  constructor(private rollerService: RollerService){
-    this.rollData = rollerService.getRollData(3);
+  constructor(){
+    this.rollData = this.getRollData(3);
   }
 
   onRollDice(){
-    this.rollData = this.rollerService.getRollData(3);
+    this.rollData = this.getRollData(3);
   }
 
+  getRandomDiceValue(){
+  return 1 + Math.floor(6*Math.random());
+  }
+
+  getRollData(numberOfDice: number): RollData {
+    const values = [];
+    let total = 0;
+    for (let i = 0; i < numberOfDice; i++) {
+      let diceValue = this.getRandomDiceValue()
+      values.push(diceValue);
+      total += diceValue;
+    }
+    return {
+      numberOfDice: numberOfDice,
+      values: values,
+      total: total
+    }
+
+  }
 }
