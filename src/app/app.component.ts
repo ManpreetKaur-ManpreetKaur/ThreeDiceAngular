@@ -18,15 +18,15 @@ export class AppComponent {
     this.rollData = this.getRollData(3);
   }
 
-  getRandomDiceValue(){
-  return 1 + Math.floor(6*Math.random());
+  getRandomDiceValue(): number{
+  return 1 + Math.floor(6 * Math.random());
   }
 
   getRollData(numberOfDice: number): RollData {
-    const values = [];
-    let total = 0;
-    for (let i = 0; i < numberOfDice; i++) {
-      let diceValue = this.getRandomDiceValue()
+    const values: number[] = [];
+    let total: number = 0;
+    for (let i: number = 0; i < numberOfDice; i++) {
+      let diceValue: number = this.getRandomDiceValue()
       values.push(diceValue);
       total += diceValue;
     }
