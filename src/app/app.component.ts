@@ -14,7 +14,7 @@ export class AppComponent {
     this.rollData = this.getRollData(3);
   }
 
-  onRollDice(){
+  onRollDice(): void {
     this.rollData = this.getRollData(3);
   }
 
